@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Admin - DIPO</title>
+    <link rel="stylesheet" href="../../styles/admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>DIPO</h2>
+                <p class="admin-badge">ADMIN</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="admin-booking.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-clipboard-data"></i></span>
+                    <span class="nav-text">Monitoring Booking</span>
+                </a>
+                <a href="admin-layananservis.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-wrench"></i></span>
+                    <span class="nav-text">Layanan Servis</span>
+                </a>
+                <a href="admin-layanantestdrive.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-car-front"></i></span>
+                    <span class="nav-text">Layanan Test Drive</span>
+                </a>
+                <a href="admin-manage-user.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-people"></i></span>
+                    <span class="nav-text">Manajemen User</span>
+                </a>
+                <a href="admin-laporan.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-graph-up"></i></span>
+                    <span class="nav-text">Laporan & Statistik</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-logout" id="btnAdminLogout">
+                    <span class="nav-icon"><i class="bi bi-box-arrow-right"></i></span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <h1>Dashboard Utama</h1>
+                    <p class="breadcrumb">Home / Dashboard</p>
+                </div>
+                <div class="header-right">
+                    <div class="admin-profile">
+                        <span class="profile-icon"><i class="bi bi-person-circle"></i></span>
+                        <div class="profile-info">
+                            <p class="profile-name" id="adminName">Admin</p>
+                            <p class="profile-email" id="adminEmail">admin@dipo.co</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Dashboard Content -->
+            <div class="dashboard-content">
+                <!-- Stats Cards -->
+                <div class="stats-grid">
+                    <!-- Card 1: Booking Hari Ini -->
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-calendar"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" id="bookingToday">0</h3>
+                            <p class="stat-label">Booking Hari Ini</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 2: Booking Minggu Ini -->
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-bar-chart"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" id="bookingWeek">0</h3>
+                            <p class="stat-label">Booking Minggu Ini</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 3: Booking Bulan Ini -->
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-graph-up"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" id="bookingMonth">0</h3>
+                            <p class="stat-label">Booking Bulan Ini</p>
+                        </div>
+                    </div>
+
+                    <!-- Card 4: Total Pelanggan -->
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="bi bi-people"></i></div>
+                        <div class="stat-info">
+                            <h3 class="stat-number" id="totalCustomers">0</h3>
+                            <p class="stat-label">Total Pelanggan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity Section -->
+                <div class="activity-section">
+                    <div class="section-header">
+                        <h2>Aktivitas Terbaru</h2>
+                        <a href="booking.html" class="btn-link">Lihat Semua →</a>
+                    </div>
+
+                    <div class="activity-grid">
+                        <!-- Booking Servis Terbaru -->
+                        <div class="activity-card">
+                            <div class="activity-header">
+                                <h3><i class="bi bi-tools"></i> Booking Servis Terbaru</h3>
+                            </div>
+                            <div class="activity-list" id="recentServis">
+                                <div class="activity-item">
+                                    <div class="activity-info">
+                                        <p class="activity-title">Toyota Avanza - B 1234 XY</p>
+                                        <p class="activity-time">2 jam yang lalu</p>
+                                    </div>
+                                    <span class="status-badge pending">Pending</span>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-info">
+                                        <p class="activity-title">Honda CR-V - B 5678 ZZ</p>
+                                        <p class="activity-time">5 jam yang lalu</p>
+                                    </div>
+                                    <span class="status-badge confirmed">Confirmed</span>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-info">
+                                        <p class="activity-title">Suzuki Ertiga - B 9012 AB</p>
+                                        <p class="activity-time">1 hari yang lalu</p>
+                                    </div>
+                                    <span class="status-badge completed">Completed</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Booking Test Drive Terbaru -->
+                        <div class="activity-card">
+                            <div class="activity-header">
+                                <h3><i class="bi bi-car-front-fill"></i> Booking Test Drive Terbaru</h3>
+                            </div>
+                            <div class="activity-list" id="recentTestDrive">
+                                <div class="activity-item">
+                                    <div class="activity-info">
+                                        <p class="activity-title">Toyota Fortuner</p>
+                                        <p class="activity-time">1 jam yang lalu</p>
+                                    </div>
+                                    <span class="status-badge pending">Pending</span>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-info">
+                                        <p class="activity-title">Honda Civic</p>
+                                        <p class="activity-time">3 jam yang lalu</p>
+                                    </div>
+                                    <span class="status-badge confirmed">Confirmed</span>
+                                </div>
+                                <div class="activity-item">
+                                    <div class="activity-info">
+                                        <p class="activity-title">Mitsubishi Pajero</p>
+                                        <p class="activity-time">6 jam yang lalu</p>
+                                    </div>
+                                    <span class="status-badge completed">Completed</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../script/admin.js"></script>
+</body>
+</html>

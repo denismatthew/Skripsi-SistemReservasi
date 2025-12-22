@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - DIPO</title>
+    <link rel="stylesheet" href="../styles/auth.css">
+</head>
+<body>
+    <div class="auth-container">
+        <!-- Left Side - Image -->
+        <div class="auth-left">
+            <div class="auth-overlay">
+                <div class="auth-branding">
+                    <h1><a href="index.html">DIPO</a></h1>
+                    <p>Servis & Test Drive Mudah dalam Satu Klik</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Right Side - Form -->
+        <div class="auth-right">
+            <div class="auth-form-container">
+                <div class="auth-header">
+                    <!-- <a href="index.html">Home</a> -->
+                    <h2>Selamat Datang Kembali</h2>
+                    <p>Login untuk melanjutkan booking Anda</p>
+                </div>
+
+                <form class="auth-form" id="loginForm">
+                    <!-- Email -->
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input 
+                            type="email" 
+                            id="email" 
+                            name="email" 
+                            placeholder="nama@email.com" 
+                            required
+                        >
+                    </div>
+
+                    <!-- Password -->
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input 
+                            type="password" 
+                            id="password" 
+                            name="password" 
+                            placeholder="Masukkan password" 
+                            required
+                        >
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button type="submit" class="btn-auth">Login</button>
+                </form>
+
+                <!-- Register Link -->
+                <div class="auth-footer">
+                    <p>Belum punya akun? <a href="register.html">Daftar sekarang</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../script/auth.js"></script>
+</body>
+</html>

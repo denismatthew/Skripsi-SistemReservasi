@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen Layanan Test Drive - DIPO</title>
+    <link rel="stylesheet" href="../../styles/admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>DIPO</h2>
+                <p class="admin-badge">ADMIN</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="admin-booking.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-clipboard-data"></i></span>
+                    <span class="nav-text">Monitoring Booking</span>
+                </a>
+                <a href="admin-layananservis.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-wrench"></i></span>
+                    <span class="nav-text">Layanan Servis</span>
+                </a>
+                <a href="admin-layanantestdrive.html" class="nav-item active">
+                    <span class="nav-icon"><i class="bi bi-car-front"></i></span>
+                    <span class="nav-text">Layanan Test Drive</span>
+                </a>
+                <a href="admin-manage-user.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-people"></i></span>
+                    <span class="nav-text">Manajemen User</span>
+                </a>
+                <a href="admin-laporan.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-graph-up"></i></span>
+                    <span class="nav-text">Laporan & Statistik</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-logout" id="btnAdminLogout">
+                    <span class="nav-icon"><i class="bi bi-box-arrow-right"></i></span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <h1>Manajemen Layanan Test Drive</h1>
+                    <p class="breadcrumb">Home / Layanan Test Drive</p>
+                </div>
+                <div class="header-right">
+                    <div class="admin-profile">
+                        <span class="profile-icon"><i class="bi bi-person-circle"></i></span>
+                        <div class="profile-info">
+                            <p class="profile-name" id="adminName">Admin</p>
+                            <p class="profile-email" id="adminEmail">admin@dipo.co</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Layanan Content -->
+            <div class="dashboard-content">
+                <!-- Action Bar -->
+                <div class="action-bar">
+                    <button class="btn-primary" id="btnTambahLayanan">
+                        <span><i class="bi bi-plus-lg"></i></span> Tambah Layanan Baru
+                    </button>
+                    <div class="search-group">
+                        <input type="text" id="searchLayanan" class="search-input" placeholder="Cari layanan...">
+                    </div>
+                </div>
+
+                <!-- Table -->
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Model Mobil</th>
+                                <th>No Plat</th>
+                                <th>Status</th>
+                                <th>Aksi</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableLayanan"></tbody>
+                    </table>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Tambah/Edit Layanan -->
+    <div class="modal" id="modalLayanan">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Tambah Layanan Baru</h2>
+                <button class="modal-close" id="btnCloseModal">&times;</button>
+            </div>
+            <form class="modal-form" id="formLayanan">
+                <input type="hidden" id="layananId">
+                
+                <div class="form-group">
+                    <label for="namaModel">Nama Model Mobil <span class="required">*</span></label>
+                    <input type="text" id="namaModel" name="namaModel" placeholder="Contoh: Pajero" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="NoPlat">No Polisi <span class="required">*</span></label>
+                    <input type="text" id="NoPlat" name="NoPlat" placeholder="B23S1" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="isAvailable" name="isAvailable" checked>
+                        <span>Aktifkan layanan ini</span>
+                    </label>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="btnCancelModal">Batal</button>
+                    <button type="submit" class="btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../script/admin.js"></script>
+    <script src="../../script/layanan-testdrive.js"></script>
+</body>
+</html>

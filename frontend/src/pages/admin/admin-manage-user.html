@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manajemen User - DIPO</title>
+    <link rel="stylesheet" href="../../styles/admin.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <div class="admin-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h2>DIPO</h2>
+                <p class="admin-badge">ADMIN</p>
+            </div>
+
+            <nav class="sidebar-nav">
+                <a href="admin-booking.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-clipboard-data"></i></span>
+                    <span class="nav-text">Monitoring Booking</span>
+                </a>
+                <a href="admin-layananservis.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-wrench"></i></span>
+                    <span class="nav-text">Layanan Servis</span>
+                </a>
+                <a href="admin-layanantestdrive.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-car-front"></i></span>
+                    <span class="nav-text">Layanan Test Drive</span>
+                </a>
+                <a href="admin-manage-user.html" class="nav-item active">
+                    <span class="nav-icon"><i class="bi bi-people"></i></span>
+                    <span class="nav-text">Manajemen User</span>
+                </a>
+                <a href="admin-laporan.html" class="nav-item">
+                    <span class="nav-icon"><i class="bi bi-graph-up"></i></span>
+                    <span class="nav-text">Laporan & Statistik</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="btn-logout" id="btnAdminLogout">
+                    <span class="nav-icon"><i class="bi bi-box-arrow-right"></i></span>
+                    <span class="nav-text">Logout</span>
+                </button>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header -->
+            <header class="content-header">
+                <div class="header-left">
+                    <h1>Manajemen User</h1>
+                    <p class="breadcrumb">Home / Manajemen User</p>
+                </div>
+                <div class="header-right">
+                    <div class="admin-profile">
+                        <span class="profile-icon"><i class="bi bi-person-circle"></i></span>
+                        <div class="profile-info">
+                            <p class="profile-name" id="adminName">Admin</p>
+                            <p class="profile-email" id="adminEmail">admin@dipo.co</p>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- User Content -->
+            <div class="dashboard-content">
+                <!-- Tabs -->
+                <div class="tabs-container">
+                    <button class="tab-btn active" data-tab="customer">
+                        <i class="bi bi-person"></i> Customer
+                    </button>
+                    <button class="tab-btn" data-tab="staff">
+                        <i class="bi bi-person-badge"></i> Staff
+                    </button>
+                    <!-- <button class="tab-btn" data-tab="admin">
+                        <i class="bi bi-person-gear"></i> Admin
+                    </button> -->
+                </div>
+
+                <!-- Tab Content: Customer -->
+                <div class="tab-content active" id="tab-customer">
+                    <div class="action-bar">
+                        <div class="info-text">
+                            <span class="info-icon">ℹ️</span>
+                            <span>Customer tidak dapat ditambahkan manual. User mendaftar melalui halaman registrasi.</span>
+                        </div>
+                        <div class="search-group">
+                            <input type="text" id="searchCustomer" class="search-input" placeholder="Cari customer...">
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>No. Telepon</th>
+                                    <th>Alamat</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableCustomer"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Staff -->
+                <div class="tab-content" id="tab-staff">
+                    <div class="action-bar">
+                        <button class="btn-primary" id="btnTambahStaff">
+                            <span>➕</span> Tambah Staff Baru
+                        </button>
+                        <div class="search-group">
+                            <input type="text" id="searchStaff" class="search-input" placeholder="Cari staff...">
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>No. Telepon</th>
+                                    <th>Alamat</th>
+                                    <th>Role</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableStaff"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <!-- Tab Content: Admin -->
+                <div class="tab-content" id="tab-admin">
+                    <div class="action-bar">
+                        <button class="btn-primary" id="btnTambahAdmin">
+                            <span>➕</span> Tambah Admin Baru
+                        </button>
+                        <div class="search-group">
+                            <input type="text" id="searchAdmin" class="search-input" placeholder="Cari admin...">
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="data-table">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Nama</th>
+                                    <th>Email</th>
+                                    <th>No. Telepon</th>
+                                    <th>Alamat</th>
+                                    <th>Aksi</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableAdmin"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Tambah/Edit User -->
+    <div class="modal" id="modalUser">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalTitle">Tambah User Baru</h2>
+                <button class="modal-close" id="btnCloseModal">&times;</button>
+            </div>
+            <form class="modal-form" id="formUser">
+                <input type="hidden" id="userId">
+                <input type="hidden" id="userRole">
+                
+                <div class="form-group">
+                    <label for="namaUser">Nama Lengkap <span class="required">*</span></label>
+                    <input type="text" id="namaUser" name="namaUser" placeholder="Masukkan nama lengkap" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="emailUser">Email <span class="required">*</span></label>
+                    <input type="email" id="emailUser" name="emailUser" placeholder="nama@email.com" required>
+                    <small class="form-help" id="emailHelp"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="teleponUser">No. Telepon <span class="required">*</span></label>
+                    <input type="tel" id="teleponUser" name="teleponUser" placeholder="08123456789" required>
+                </div>
+
+                <div class="form-group" id="passwordGroup">
+                    <label for="passwordUser">Password <span class="required">*</span></label>
+                    <input type="password" id="passwordUser" name="passwordUser" placeholder="Minimal 8 karakter" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="addressUser">Alamat <span class="required">*</span></label>
+                    <input type="text" id="addressUser" name="addressUser" placeholder="Masukkan alamat" required>
+                </div>
+
+                <div class="form-group" id="staffRoleGroup" style="display: none;">
+                    <label for="staffRoleUser">Role Staff <span class="required">*</span></label>
+                    <select id="staffRoleUser" name="staffRoleUser" required>
+                        <option value="" disabled selected>Pilih Role Staff</option>
+                        <option value="Technician">Technician</option>
+                        <option value="Sales">Sales</option>
+                    </select>
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="btn-secondary" id="btnCancelModal">Batal</button>
+                    <button type="submit" class="btn-primary">Simpan</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="../../script/admin.js"></script>
+    <script src="../../script/manage-user.js"></script>
+</body>
+</html>

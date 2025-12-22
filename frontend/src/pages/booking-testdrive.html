@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking Test Drive - DIPO</title>
+    <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <div class="logo"><a href="index.html">DIPO</a></div>
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="index.html#home">Home</a></li>
+                    <li><a href="index.html#layanan">Layanan</a></li>
+                    <li><a href="index.html#tentang">Tentang</a></li>
+                    <li><a href="index.html#kontak">Kontak</a></li>
+                </ul>
+
+                <div class="user-menu">
+                    <!-- Show when NOT logged in -->
+                    <a href="login.html" class="btn-login" id="btnLogin">Login</a>
+                    
+                    <!-- Show when logged in -->
+                    <div class="user-dropdown" id="userDropdown" style="display: none;">
+                        <button class="user-button" id="userButton">
+                            <span class="user-icon"><i class="bi bi-person-circle"></i></span>
+                            <span class="user-name" id="userName">User</span>
+                            <span class="dropdown-arrow">▼</span>
+                        </button>
+                        <div class="dropdown-menu" id="dropdownMenu">
+                            <a href="customer/dashboard.html" class="dropdown-item">
+                                <span class="item-icon"><i class="bi bi-clock-history"></i></span> My Booking
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item" id="btnLogout">
+                                <span class="item-icon"><i class="bi bi-box-arrow-right"></i></span> Logout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Booking Form Section -->
+    <section class="booking-section">
+        <div class="booking-container">
+            <div class="booking-header">
+                <h1>Booking Test Drive</h1>
+                <p>Pilih mobil impian Anda dan jadwalkan test drive sekarang</p>
+            </div>
+
+            <form class="booking-form" id="testDriveForm">
+                <!-- Pilih Mobil -->
+                <div class="form-group">
+                    <label for="mobilPilihan">Pilih Mobil <span class="required">*</span></label>
+                    <select id="mobilPilihan" name="mobilPilihan" required>
+                        <option value="">-- Pilih Mobil --</option>
+                        <optgroup label="Toyota">
+                            <option value="Toyota Avanza">Toyota Avanza</option>
+                            <option value="Toyota Fortuner">Toyota Fortuner</option>
+                            <option value="Toyota Innova">Toyota Innova</option>
+                            <option value="Toyota Raize">Toyota Raize</option>
+                            <option value="Toyota Alphard">Toyota Alphard</option>
+                        </optgroup>
+                        <optgroup label="Honda">
+                            <option value="Honda CR-V">Honda CR-V</option>
+                            <option value="Honda Civic">Honda Civic</option>
+                            <option value="Honda Brio">Honda Brio</option>
+                            <option value="Honda HR-V">Honda HR-V</option>
+                        </optgroup>
+                        <optgroup label="Suzuki">
+                            <option value="Suzuki Ertiga">Suzuki Ertiga</option>
+                            <option value="Suzuki Swift">Suzuki Swift</option>
+                            <option value="Suzuki Baleno">Suzuki Baleno</option>
+                        </optgroup>
+                        <optgroup label="Mitsubishi">
+                            <option value="Mitsubishi Pajero Sport">Mitsubishi Pajero Sport</option>
+                            <option value="Mitsubishi Xpander">Mitsubishi Xpander</option>
+                        </optgroup>
+                        <optgroup label="Daihatsu">
+                            <option value="Daihatsu Xenia">Daihatsu Xenia</option>
+                            <option value="Daihatsu Terios">Daihatsu Terios</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+
+                <!-- Tanggal & Jam (Grid 2 kolom) -->
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="tanggalTestDrive">Tanggal Test Drive <span class="required">*</span></label>
+                        <input type="date" id="tanggalTestDrive" name="tanggalTestDrive" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="jamTestDrive">Jam Test Drive <span class="required">*</span></label>
+                        <select id="jamTestDrive" name="jamTestDrive" required>
+                            <option value="">-- Pilih Jam --</option>
+                            <option value="08:00">08:00</option>
+                            <option value="08:30">08:30</option>
+                            <option value="09:00">09:00</option>
+                            <option value="09:30">09:30</option>
+                            <option value="10:00">10:00</option>
+                            <option value="10:30">10:30</option>
+                            <option value="11:00">11:00</option>
+                            <option value="11:30">11:30</option>
+                            <option value="12:00">12:00</option>
+                            <option value="12:30">12:30</option>
+                            <option value="13:00">13:00</option>
+                            <option value="13:30">13:30</option>
+                            <option value="14:00">14:00</option>
+                            <option value="14:30">14:30</option>
+                            <option value="15:00">15:00</option>
+                            <option value="15:30">15:30</option>
+                            <option value="16:00">16:00</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Catatan Tambahan -->
+                <div class="form-group">
+                    <label for="catatan">Catatan Tambahan (Opsional)</label>
+                    <textarea id="catatan" name="catatan" rows="4" placeholder="Tulis catatan atau pertanyaan Anda..."></textarea>
+                </div>
+
+                <!-- Info Box -->
+                <div class="info-box">
+                    <h4>Persyaratan Test Drive:</h4>
+                    <ul>
+                        <li>Membawa KTP dan SIM A/C</li>
+                        <li>Usia minimal 21 tahun</li>
+                        <li>Durasi test drive maksimal 30 menit</li>
+                        <li>Didampingi oleh sales representative</li>
+                    </ul>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-submit">Submit Booking</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <p>&copy; 2025 DIPO. All rights reserved.</p>
+        <p><i class="bi bi-envelope"></i> contact@dipo.com | <i class="bi bi-telephone"></i> +62 812-3456-7890</p>
+        <div class="footer-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">FAQ</a>
+        </div>
+    </footer>
+
+    <script src="../script/testdrive.js"></script>
+</body>
+</html>
